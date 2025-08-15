@@ -183,7 +183,7 @@ export function ReportExport() {
                       {new Date(report.date).toLocaleDateString('ja-JP')} - {report.reporter}
                     </p>
                     <div className="flex items-center space-x-4 mt-1">
-                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded">
                         進捗 {report.progress.actual}%
                       </span>
                       <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">

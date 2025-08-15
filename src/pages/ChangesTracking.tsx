@@ -143,7 +143,7 @@ function ClientRequestsTab({ report }: { report: any }) {
                 <div key={request.id} className="border rounded-lg p-4">
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex space-x-2">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800">
+                      <span className="px-2 py-1 rounded text-xs font-medium bg-blue-600 text-white">
                         {request.type}
                       </span>
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
@@ -276,7 +276,7 @@ function ConcernsTab({ report }: { report: any }) {
                       </span>
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         concern.status === '解決済み' ? 'bg-green-100 text-green-800' :
-                        concern.status === '対応中' ? 'bg-blue-100 text-blue-800' :
+                        concern.status === '対応中' ? 'bg-blue-600 text-white' :
                         concern.status === '監視中' ? 'bg-yellow-100 text-yellow-800' :
                         'bg-red-100 text-red-800'
                       }`}>

@@ -172,7 +172,7 @@ export function PhotoManagement() {
                   </div>
                   <div className="p-3">
                     <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded">
                         {photo.category}
                       </span>
                       <Button variant="outline" size="sm">

@@ -55,7 +55,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 cn(
                   'flex items-center px-3 py-3 text-base font-medium rounded-md transition-colors',
                   isActive
-                    ? 'bg-blue-100 text-blue-700'
+                    ? 'bg-blue-600 text-white'
                     : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                 )
               }
