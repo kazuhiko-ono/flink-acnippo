@@ -24,7 +24,7 @@ export function Dashboard() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">ダッシュボード</h2>
         <Link to="/create">
-          <Button>
+          <Button variant="outline" className="border-2 hover:bg-gray-50">
             <Plus className="h-4 w-4 mr-2" />
             新しい日報作成
           </Button>
@@ -63,7 +63,7 @@ export function Dashboard() {
           </CardHeader>
           <CardContent>
             <Link to="/create">
-              <Button className="w-full">
+              <Button variant="outline" className="w-full border-2 hover:bg-gray-50">
                 <Plus className="h-4 w-4 mr-2" />
                 今日の日報を作成
               </Button>
