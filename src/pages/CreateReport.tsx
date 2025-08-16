@@ -103,7 +103,7 @@ export function CreateReport() {
         <h2 className="text-2xl font-bold">
           {existingReport ? '日報編集' : '日報作成'}
         </h2>
-        <Button onClick={handleSubmit(onSubmit)}>
+        <Button type="button" onClick={handleSubmit(onSubmit)}>
           <Save className="h-4 w-4 mr-2" />
           保存
         </Button>
