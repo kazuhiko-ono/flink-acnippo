@@ -23,24 +23,24 @@ export function Dashboard() {
       {/* Quick Actions */}
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">ダッシュボード</h2>
-        <Link to="/create">
-          <Button variant="outline" className="border-2 hover:bg-gray-50">
-            <Plus className="h-4 w-4 mr-2" />
-            新しい日報作成
-          </Button>
-        </Link>
       </div>
 
       {/* Today's Report Status */}
-      {todayReport ? (
-        <Card className="bg-green-50 border-green-200">
-          <CardHeader>
-            <CardTitle className="text-green-800">本日の日報</CardTitle>
-            <CardDescription>
-              {todayReport.projectName} - 最終更新: {new Date(todayReport.updatedAt).toLocaleTimeString('ja-JP')}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+      <Card className={todayReport ? "bg-green-50 border-green-200" : "bg-yellow-50 border-yellow-200"}>
+        <CardHeader>
+          <CardTitle className={todayReport ? "text-green-800" : "text-yellow-800"}>
+            本日の日報
+          </CardTitle>
+          <CardDescription>
+            {todayReport ? (
+              <>{todayReport.projectName} - 最終更新: {new Date(todayReport.updatedAt).toLocaleTimeString('ja-JP')}</>
+            ) : (
+              "まだ本日の日報が作成されていません"
+            )}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {todayReport ? (
             <div className="flex items-center justify-between">
               <div className="space-y-1">
                 <p className="text-sm">進捗率: {todayReport.progress.actual}%</p>
@@ -48,29 +48,22 @@ export function Dashboard() {
                 <p className="text-sm">写真: {todayReport.photos.length}枚</p>
               </div>
               <Link to="/create">
-                <Button variant="outline" size="sm">
-                  編集
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <FileText className="h-4 w-4 mr-2" />
+                  日報を編集
                 </Button>
               </Link>
             </div>
-          </CardContent>
-        </Card>
-      ) : (
-        <Card className="bg-yellow-50 border-yellow-200">
-          <CardHeader>
-            <CardTitle className="text-yellow-800">本日の日報</CardTitle>
-            <CardDescription>まだ本日の日報が作成されていません</CardDescription>
-          </CardHeader>
-          <CardContent>
+          ) : (
             <Link to="/create">
-              <Button variant="outline" className="w-full border-2 hover:bg-gray-50">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 今日の日報を作成
               </Button>
             </Link>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </CardContent>
+      </Card>
 
       {/* Statistics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
